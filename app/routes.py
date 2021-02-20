@@ -5,9 +5,9 @@ from werkzeug.utils import secure_filename
 from PIL import Image, ImageFilter, ImageEnhance, ImageOps
 from app.functions import *
 
-app.config["UPLOADED_IMAGES"] = "/home/deepesh/app/app/uploads"
+app.config["UPLOADED_IMAGES"] = "/home/deepesh/app/app/uploads" #Change this file path according the one on your local pc
 app.config["ALLOWED"] = ["png", "jpg", "jpeg"]
-app.config["FILTERED_IMAGES"] = "/home/deepesh/app/app/downloads"
+app.config["FILTERED_IMAGES"] = "/home/deepesh/app/app/downloads" ##Change this file path according the one on your local pc
 
 
 def is_allowed(filename):
