@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Image Filter</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container" align="center">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center" style="font-weight : bold">
+            Image Filtering Application
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div align="center">
+      <form method="post" enctype="multipart/form-data">
+        <input type="file" id="file-input" name="image" />
+        <label for="file-input"
+          ><i class="glyphicon glyphicon-open"></i>&nbsp;Choose an Image</label
+        >
+        <span>
+          <strong>Chosen Image:</strong>
+          <span id="file-name">None</span>
+        </span>
+        <script>
+          let inputFile = document.getElementById("file-input");
+          let fileNamefield = document.getElementById("file-name");
+          inputFile.addEventListener("change", function(event) {
+            let uploadedFileName = event.target.files[0].name;
+            fileNamefield.textContent = uploadedFileName;
+          });
+        </script>
+        <input type="submit" value="Upload Image" /><br /><br />
+        <input type="radio" name="filter" value="1" checked />Black and White
+        <br /><br />
+        <input type="radio" name="filter" value="2" />Blur <br /><br />
+        <input type="radio" name="filter" value="3" />Increase Contrast
+        <br /><br />
+        <input type="radio" name="filter" value="4" />Flip <br /><br />
+        <input type="radio" name="filter" value="5" />Rotate by 90 degrees
+        <br /><br />
+        <input type="radio" name="filter" value="6" />Resize(360 * 360)
+        <br /><br />
+        <input type="radio" name="filter" value="7" />Resize(720 * 720)
+        <br /><br />
+        <input type="radio" name="filter" value="8" />Enhance Edges <br /><br />
+        <input type="radio" name="filter" value="9" />Emboss <br /><br />
+        <input type="radio" name="filter" value="10" />Contour <br /><br />
+        <input type="radio" name="filter" value="11" />Find Edges <br /><br />
+        <input type="radio" name="filter" value="12" />Smooth <br /><br />
+        <input type="radio" name="filter" value="13" />Sharpen <br /><br />
+        <input type="radio" name="filter" value="14" />Negative <br /><br />
+      </form>
+    </div>
+  </body>
+</html>
